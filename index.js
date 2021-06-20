@@ -2,9 +2,10 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 //teste
+
 var cors = require('cors');
 app.use(cors());
-//teste git
+
 app.listen(process.env.PORT || 3000);
 
 const jogadores =[
@@ -65,9 +66,8 @@ app.delete('/jogadores/:id',
 /* MONGODB */
 
 const mongodb = require('mongodb')
-const password = "Zgvj52aAH9swFrPw";
+const password = process.env.PASSWORD || "asdf";
 console.log(password);
-
 
 const connectionString = `mongodb+srv://admin:${password}@cluster0.sy1ep.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
